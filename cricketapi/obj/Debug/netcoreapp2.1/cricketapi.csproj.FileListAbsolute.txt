@@ -1,0 +1,14 @@
+C:\Users\isaac\Desktop\cricketapi\cricketapi\bin\Debug\netcoreapp2.1\cricketapi.deps.json
+C:\Users\isaac\Desktop\cricketapi\cricketapi\bin\Debug\netcoreapp2.1\cricketapi.runtimeconfig.json
+C:\Users\isaac\Desktop\cricketapi\cricketapi\bin\Debug\netcoreapp2.1\cricketapi.runtimeconfig.dev.json
+C:\Users\isaac\Desktop\cricketapi\cricketapi\bin\Debug\netcoreapp2.1\cricketapi.dll
+C:\Users\isaac\Desktop\cricketapi\cricketapi\bin\Debug\netcoreapp2.1\cricketapi.pdb
+C:\Users\isaac\Desktop\cricketapi\cricketapi\obj\Debug\netcoreapp2.1\cricketapi.csproj.CoreCompileInputs.cache
+C:\Users\isaac\Desktop\cricketapi\cricketapi\obj\Debug\netcoreapp2.1\cricketapi.RazorAssemblyInfo.cache
+C:\Users\isaac\Desktop\cricketapi\cricketapi\obj\Debug\netcoreapp2.1\cricketapi.RazorAssemblyInfo.cs
+C:\Users\isaac\Desktop\cricketapi\cricketapi\obj\Debug\netcoreapp2.1\cricketapi.AssemblyInfoInputs.cache
+C:\Users\isaac\Desktop\cricketapi\cricketapi\obj\Debug\netcoreapp2.1\cricketapi.AssemblyInfo.cs
+C:\Users\isaac\Desktop\cricketapi\cricketapi\obj\Debug\netcoreapp2.1\cricketapi.RazorTargetAssemblyInfo.cache
+C:\Users\isaac\Desktop\cricketapi\cricketapi\obj\Debug\netcoreapp2.1\cricketapi.dll
+C:\Users\isaac\Desktop\cricketapi\cricketapi\obj\Debug\netcoreapp2.1\cricketapi.pdb
+C:\Users\isaac\Desktop\cricketapi\cricketapi\obj\Debug\netcoreapp2.1\cricketapi.csprojAssemblyReference.cache
