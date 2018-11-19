@@ -182,7 +182,7 @@ namespace cricketapi.Controllers
                 {
                     return (BadRequest("hi"));
                 }
-                return BadRequest($"An error has occured. Details: {ex.Message}");
+                return BadRequest($"An error has occured. Details:{ex.Message}");
             }
 
 
