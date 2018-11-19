@@ -180,9 +180,19 @@ namespace cricketapi.Controllers
             {
                 if(ex.Message == "Object reference not set to an instance of an object.")
                 {
-                    return (BadRequest("hi"));
+                    Player player = new Player();
+                    player.Name = cricketer.Name;
+                    player.Country = cricketer.Country;
+                    player.Runs = cricketer.Runs;
+                    player.Wickets = cricketer.Wickets;
+                    player.Catches = cricketer.Catches;
+                    player.Url = "https://static1.squarespace.com/static/5a16b19b268b96d901c31aab/5a188f31ec212d9bd3b8b5ff/5b0e16aeaa4a99acd2525e96/1527650073172/Empty+profile.jpg?format=1000w";
+                    _context.Player.Add(player);
+                    await _context.SaveChangesAsync();
+
+                    return Ok($"File: {cricketer.Name} has successfully uploaded");
                 }
-                return BadRequest($"An error has occured. Details:{ex.Message}");
+                return BadRequest($"An error has occured. Details: {ex.Message}");
             }
 
 
