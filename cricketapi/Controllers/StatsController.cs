@@ -178,6 +178,10 @@ namespace cricketapi.Controllers
             }
             catch (Exception ex)
             {
+                if(ex.Message == "Object reference not set to an instance of an object.")
+                {
+                    return (BadRequest("hi"));
+                }
                 return BadRequest($"An error has occured. Details: {ex.Message}");
             }
 
