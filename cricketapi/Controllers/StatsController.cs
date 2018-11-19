@@ -132,12 +132,12 @@ namespace cricketapi.Controllers
         // GET: api/Stats/Names
         [Route("name")]
         [HttpGet]
-        public async Task<List<string>> GetNames()
+        public async Task<List<string>> GetName()
         {
-            var names = (from m in _context.Player
+            var name = (from m in _context.Player
                          select m.Name).Distinct();
 
-            var returned = await names.ToListAsync();
+            var returned = await name.ToListAsync();
 
             return returned;
         }
