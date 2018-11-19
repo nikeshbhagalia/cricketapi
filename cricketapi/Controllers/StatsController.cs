@@ -130,9 +130,9 @@ namespace cricketapi.Controllers
         }
 
         // GET: api/Stats/Names
-        [Route("name")]
+        [Route("names")]
         [HttpGet]
-        public async Task<List<string>> GetTags()
+        public async Task<List<string>> GetNames()
         {
             var names = (from m in _context.Player
                          select m.Name).Distinct();
