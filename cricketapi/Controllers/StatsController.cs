@@ -130,7 +130,7 @@ namespace cricketapi.Controllers
         }
 
         // GET: api/Stats/Names
-        [Route("names")]
+        [Route("name")]
         [HttpGet]
         public async Task<List<string>> GetNames()
         {
