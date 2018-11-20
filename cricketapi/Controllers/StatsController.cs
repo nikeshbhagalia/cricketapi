@@ -140,24 +140,21 @@ namespace cricketapi.Controllers
 
             return returned;
         }*/
-        public async Task<IActionResult> GetName([FromRoute] string name)
+        public async Task<List<Player>> GetName([FromRoute] string name)
         {
-            if (!ModelState.IsValid)
+            /*if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
-            }
-
+            }*/
+            List<Player> a = new List<Player>();
             var id = (from m in _context.Player
                       where m.Name.ToLower().StartsWith(name.ToLower())
                         select m.Id);
             var player = await _context.Player.FindAsync(id.First());
+            //string test = "{\"id\":" + player.Id + ",\"name\":\"" + player.Name + "\",\"country\":\"" + player.Country + "\",\"runs\":\"" + player.Runs + "\",\"wickets\":\"" + player.Wickets + "\",\"catches\":\"" + player.Catches + "\",\"url\":\"" + player.Url + "\"}";
+            a.Add(player);
 
-            if (player == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(player);
+            return a;
         }
         [HttpPost, Route("upload")]
         public async Task<IActionResult> UploadFile([FromForm]PlayerImageItem cricketer)
