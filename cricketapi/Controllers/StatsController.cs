@@ -148,7 +148,7 @@ namespace cricketapi.Controllers
             }
 
             var id = (from m in _context.Player
-                      where m.Name == name
+                      where m.Name.ToLower().StartsWith(name.ToLower())
                         select m.Id);
             var player = await _context.Player.FindAsync(id.First());
 
