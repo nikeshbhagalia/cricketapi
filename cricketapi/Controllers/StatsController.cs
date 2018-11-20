@@ -147,12 +147,18 @@ namespace cricketapi.Controllers
                 return BadRequest(ModelState);
             }*/
             List<Player> a = new List<Player>();
-            var id = (from m in _context.Player
+            var ids = (from m in _context.Player
                       where m.Name.ToLower().StartsWith(name.ToLower())
                         select m.Id);
-            var player = await _context.Player.FindAsync(id.First());
+            foreach(var id in ids)
+            {
+                var player = await _context.Player.FindAsync(id);
+                a.Add(player);
+            }
+            
+            //var player = await _context.Player.FindAsync(id.First());
             //string test = "{\"id\":" + player.Id + ",\"name\":\"" + player.Name + "\",\"country\":\"" + player.Country + "\",\"runs\":\"" + player.Runs + "\",\"wickets\":\"" + player.Wickets + "\",\"catches\":\"" + player.Catches + "\",\"url\":\"" + player.Url + "\"}";
-            a.Add(player);
+            //a.Add(player);
 
             return a;
         }
