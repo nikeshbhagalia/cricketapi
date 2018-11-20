@@ -130,17 +130,35 @@ namespace cricketapi.Controllers
         }
 
         // GET: api/Stats/Names
-        [Route("name")]
+        [Route("name/{name}")]
         [HttpGet]
-        public async Task<List<string>> GetName()
+        /*public async Task<List<string>> GetName()
         {
             var name = (from m in _context.Player
                          select m.Name).Distinct();
             var returned = await name.ToListAsync();
 
             return returned;
-        }
+        }*/
+        public async Task<IActionResult> GetName([FromRoute] string name)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
+            var id = (from m in _context.Player
+                      where m.Name == name
+                        select m.Id);
+            var player = await _context.Player.FindAsync(id.First());
+
+            if (player == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(player);
+        }
         [HttpPost, Route("upload")]
         public async Task<IActionResult> UploadFile([FromForm]PlayerImageItem cricketer)
         {
