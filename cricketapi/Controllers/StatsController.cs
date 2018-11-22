@@ -132,35 +132,13 @@ namespace cricketapi.Controllers
         // GET: api/Stats/Names
         [Route("name/{name}")]
         [HttpGet]
-        /*public async Task<List<string>> GetName()
-        {
-            var name = (from m in _context.Player
-                         select m.Name).Distinct();
-            var returned = await name.ToListAsync();
-
-            return returned;
-        }*/
         public async Task<List<Player>> GetName([FromRoute] string name)
         {
-            /*if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }*/
-            List<Player> a = new List<Player>();
-            var ids = (from m in _context.Player
-                      where m.Name.ToLower().StartsWith(name.ToLower())
-                        select m.Id);
-            foreach(var id in ids)
-            {
-                var player = await _context.Player.FindAsync(id);
-                a.Add(player);
-            }
-            
-            //var player = await _context.Player.FindAsync(id.First());
-            //string test = "{\"id\":" + player.Id + ",\"name\":\"" + player.Name + "\",\"country\":\"" + player.Country + "\",\"runs\":\"" + player.Runs + "\",\"wickets\":\"" + player.Wickets + "\",\"catches\":\"" + player.Catches + "\",\"url\":\"" + player.Url + "\"}";
-            //a.Add(player);
-
-            return a;
+            var players = (from m in _context.Player
+                           where m.Name.ToLower().StartsWith(name.ToLower())
+                           select m);
+            var returned = await players.ToListAsync();
+            return returned;
         }
         [HttpPost, Route("upload")]
         public async Task<IActionResult> UploadFile([FromForm]PlayerImageItem cricketer)
