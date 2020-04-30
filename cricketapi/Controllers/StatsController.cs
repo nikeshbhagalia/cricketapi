@@ -27,14 +27,12 @@ namespace cricketapi.Controllers
             _configuration = configuration;
         }
 
-        // GET: api/Stats
         [HttpGet]
         public IEnumerable<Player> GetPlayer()
         {
             return _context.Player;
         }
 
-        // GET: api/Stats/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPlayer([FromRoute] int id)
         {
@@ -53,7 +51,6 @@ namespace cricketapi.Controllers
             return Ok(player);
         }
 
-        // PUT: api/Stats/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPlayer([FromRoute] int id, [FromBody] Player player)
         {
@@ -88,7 +85,6 @@ namespace cricketapi.Controllers
             return NoContent();
         }
 
-        // POST: api/Stats
         [HttpPost]
         public async Task<IActionResult> PostPlayer([FromBody] Player player)
         {
@@ -103,7 +99,6 @@ namespace cricketapi.Controllers
             return CreatedAtAction("GetPlayer", new { id = player.Id }, player);
         }
 
-        // DELETE: api/Stats/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePlayer([FromRoute] int id)
         {
@@ -129,7 +124,6 @@ namespace cricketapi.Controllers
             return _context.Player.Any(e => e.Id == id);
         }
 
-        // GET: api/Stats/Names
         [Route("name/{name}")]
         [HttpGet]
         public async Task<List<Player>> GetName([FromRoute] string name)
@@ -140,6 +134,7 @@ namespace cricketapi.Controllers
             var returned = await players.ToListAsync();
             return returned;
         }
+        
         [HttpPost, Route("upload")]
         public async Task<IActionResult> UploadFile([FromForm]PlayerImageItem cricketer)
         {
@@ -199,7 +194,6 @@ namespace cricketapi.Controllers
 
         private async Task<CloudBlockBlob> UploadToBlob(string filename, byte[] imageBuffer = null, System.IO.Stream stream = null)
         {
-
             var accountName = _configuration["AzureBlob:name"];
             var accountKey = _configuration["AzureBlob:key"]; ;
             var storageAccount = new CloudStorageAccount(new StorageCredentials(accountName, accountKey), true);
