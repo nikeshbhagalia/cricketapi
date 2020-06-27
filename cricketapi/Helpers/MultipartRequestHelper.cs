@@ -6,8 +6,6 @@ namespace cricketapi.Helpers
 {
     public static class MultipartRequestHelper
     {
-        // Content-Type: multipart/form-data; boundary="----WebKitFormBoundarymx2fSWqWSd0OxQqq"
-        // The spec says 70 characters is a reasonable limit.
         public static string GetBoundary(MediaTypeHeaderValue contentType, int lengthLimit)
         {
             var boundary = HeaderUtilities.RemoveQuotes(contentType.Boundary);
