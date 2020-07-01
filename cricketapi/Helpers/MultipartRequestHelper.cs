@@ -16,8 +16,7 @@ namespace cricketapi.Helpers
 
             if (boundary.Length > lengthLimit)
             {
-                throw new InvalidDataException(
-                    $"Multipart boundary length limit {lengthLimit} exceeded.");
+                throw new InvalidDataException($"Multipart boundary length limit {lengthLimit} exceeded.");
             }
 
             return boundary.ToString();
