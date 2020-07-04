@@ -9,6 +9,7 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -192,7 +193,7 @@ namespace cricketapi.Controllers
 
         }
 
-        private async Task<CloudBlockBlob> UploadToBlob(string filename, byte[] imageBuffer = null, System.IO.Stream stream = null)
+        private async Task<CloudBlockBlob> UploadToBlob(string filename, byte[] imageBuffer = null, Stream stream = null)
         {
             var accountName = _configuration["AzureBlob:name"];
             var accountKey = _configuration["AzureBlob:key"]; ;
