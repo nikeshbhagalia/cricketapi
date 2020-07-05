@@ -209,7 +209,6 @@ namespace cricketapi.Controllers
             {
                 try
                 {
-                    // Generate a new filename for every new blob
                     var fileName = Guid.NewGuid().ToString();
                     fileName += GetFileExtention(filename);
 
