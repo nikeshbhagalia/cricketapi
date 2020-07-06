@@ -213,7 +213,7 @@ namespace cricketapi.Controllers
                     fileName += GetFileExtention(filename);
 
                     // Get a reference to the blob address, then upload the file to the blob.
-                    CloudBlockBlob cloudBlockBlob = imagesContainer.GetBlockBlobReference(fileName);
+                    var cloudBlockBlob = imagesContainer.GetBlockBlobReference(fileName);
 
                     if (stream != null)
                     {
