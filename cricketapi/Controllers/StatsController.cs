@@ -148,8 +148,7 @@ namespace cricketapi.Controllers
                 using (var stream = cricketer.Image.OpenReadStream())
                 {
                     var cloudBlock = await UploadToBlob(cricketer.Image.FileName, null, stream);
-                    //// Retrieve the filename of the file you have uploaded
-                    //var filename = provider.FileData.FirstOrDefault()?.LocalFileName;
+                    
                     if (string.IsNullOrEmpty(cloudBlock.StorageUri.ToString()))
                     {
                         return BadRequest("An error has occured while uploading your file. Please try again.");
