@@ -197,7 +197,7 @@ namespace cricketapi.Controllers
             var accountName = _configuration["AzureBlob:name"];
             var accountKey = _configuration["AzureBlob:key"]; ;
             var storageAccount = new CloudStorageAccount(new StorageCredentials(accountName, accountKey), true);
-            CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+            var blobClient = storageAccount.CreateCloudBlobClient();
 
             CloudBlobContainer imagesContainer = blobClient.GetContainerReference("images");
 
