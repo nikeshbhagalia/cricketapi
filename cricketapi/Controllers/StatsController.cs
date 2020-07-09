@@ -154,7 +154,7 @@ namespace cricketapi.Controllers
                         return BadRequest("An error has occured while uploading your file. Please try again.");
                     }
 
-                    Player player = new Player();
+                    var player = new Player();
                     player.Name = cricketer.Name;
                     player.Country = cricketer.Country;
                     player.Runs = cricketer.Runs;
