@@ -154,12 +154,14 @@ namespace cricketapi.Controllers
                         return BadRequest("An error has occured while uploading your file. Please try again.");
                     }
 
-                    var player = new Player();
-                    player.Name = cricketer.Name;
-                    player.Country = cricketer.Country;
-                    player.Runs = cricketer.Runs;
-                    player.Wickets = cricketer.Wickets;
-                    player.Catches = cricketer.Catches;
+                    var player = new Player
+                    {
+                        Name = cricketer.Name,
+                        Country = cricketer.Country,
+                        Runs = cricketer.Runs,
+                        Wickets = cricketer.Wickets,
+                        Catches = cricketer.Catches
+                    };
 
                     System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
                     player.Url = cloudBlock.SnapshotQualifiedUri.AbsoluteUri;
