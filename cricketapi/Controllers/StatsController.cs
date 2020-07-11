@@ -160,11 +160,11 @@ namespace cricketapi.Controllers
                         Country = cricketer.Country,
                         Runs = cricketer.Runs,
                         Wickets = cricketer.Wickets,
-                        Catches = cricketer.Catches
+                        Catches = cricketer.Catches,
+                        Url = cloudBlock.SnapshotQualifiedUri.AbsoluteUri
                     };
 
                     System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
-                    player.Url = cloudBlock.SnapshotQualifiedUri.AbsoluteUri;
 
                     _context.Player.Add(player);
                     await _context.SaveChangesAsync();
