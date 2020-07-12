@@ -176,7 +176,7 @@ namespace cricketapi.Controllers
             {
                 if(ex.Message == "Object reference not set to an instance of an object.")
                 {
-                    Player player = new Player();
+                    var player = new Player();
                     player.Name = cricketer.Name;
                     player.Country = cricketer.Country;
                     player.Runs = cricketer.Runs;
