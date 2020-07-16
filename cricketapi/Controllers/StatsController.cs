@@ -205,7 +205,7 @@ namespace cricketapi.Controllers
 
             var imagesContainer = blobClient.GetContainerReference("images");
 
-            string storageConnectionString = _configuration["AzureBlob:connectionString"];
+            var storageConnectionString = _configuration["AzureBlob:connectionString"];
 
             // Check whether the connection string can be parsed.
             if (CloudStorageAccount.TryParse(storageConnectionString, out storageAccount))
