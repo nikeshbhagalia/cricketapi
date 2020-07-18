@@ -109,7 +109,7 @@ namespace cricketapi.Controllers
             }
 
             var player = await _context.Player.FindAsync(id);
-            if (player == null)
+            if (player is null)
             {
                 return NotFound();
             }
