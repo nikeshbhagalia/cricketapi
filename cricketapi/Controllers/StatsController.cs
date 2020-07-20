@@ -244,7 +244,7 @@ namespace cricketapi.Controllers
         private string GetFileExtention(string fileName)
         {
             if (!fileName.Contains("."))
-                return ""; //no extension
+                return string.Empty; //no extension
             else
             {
                 var extentionList = fileName.Split('.');
