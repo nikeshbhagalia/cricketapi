@@ -164,7 +164,7 @@ namespace cricketapi.Controllers
                         Url = cloudBlock.SnapshotQualifiedUri.AbsoluteUri
                     };
 
-                    System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
+                    var image = System.Drawing.Image.FromStream(stream);
 
                     _context.Player.Add(player);
                     await _context.SaveChangesAsync();
