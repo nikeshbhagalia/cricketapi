@@ -9,6 +9,7 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -164,7 +165,7 @@ namespace cricketapi.Controllers
                         Url = cloudBlock.SnapshotQualifiedUri.AbsoluteUri
                     };
 
-                    var image = System.Drawing.Image.FromStream(stream);
+                    var image = Image.FromStream(stream);
 
                     _context.Player.Add(player);
                     await _context.SaveChangesAsync();
