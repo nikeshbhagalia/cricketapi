@@ -213,8 +213,7 @@ namespace cricketapi.Controllers
             {
                 try
                 {
-                    var fileName = Guid.NewGuid().ToString();
-                    fileName += GetFileExtention(filename);
+                    var fileName = $"{Guid.NewGuid()}{GetFileExtention(filename)}";
 
                     // Get a reference to the blob address, then upload the file to the blob.
                     var cloudBlockBlob = imagesContainer.GetBlockBlobReference(fileName);
