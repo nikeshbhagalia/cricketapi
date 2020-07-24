@@ -231,7 +231,7 @@ namespace cricketapi.Controllers
                 }
                 catch (StorageException)
                 {
-                    return new CloudBlockBlob(new Uri(""));
+                    return new CloudBlockBlob(new Uri(string.Empty));
                 }
             }
             else
