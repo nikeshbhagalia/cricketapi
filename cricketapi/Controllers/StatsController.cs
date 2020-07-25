@@ -236,7 +236,7 @@ namespace cricketapi.Controllers
             }
             else
             {
-                return new CloudBlockBlob(new Uri(""));
+                return new CloudBlockBlob(new Uri(string.Empty));
             }
 
         }
