@@ -248,7 +248,7 @@ namespace cricketapi.Controllers
             else
             {
                 var extentionList = fileName.Split('.');
-                return "." + extentionList.Last(); //assumes last item is the extension 
+                return $".{extentionList.Last()}"; //assumes last item is the extension 
             }
         }
     }
