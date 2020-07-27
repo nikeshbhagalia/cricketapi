@@ -56,11 +56,6 @@ namespace cricketapi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPlayer([FromRoute] int id, [FromBody] Player player)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             if (id != player.Id)
             {
                 return BadRequest();
