@@ -195,7 +195,7 @@ namespace cricketapi.Controllers
         private async Task<CloudBlockBlob> UploadToBlob(string filename, byte[] imageBuffer = null, Stream stream = null)
         {
             var accountName = _configuration["AzureBlob:name"];
-            var accountKey = _configuration["AzureBlob:key"]; ;
+            var accountKey = _configuration["AzureBlob:key"];
             var storageAccount = new CloudStorageAccount(new StorageCredentials(accountName, accountKey), true);
             var blobClient = storageAccount.CreateCloudBlobClient();
 
