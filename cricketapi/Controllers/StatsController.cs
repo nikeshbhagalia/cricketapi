@@ -133,7 +133,7 @@ namespace cricketapi.Controllers
         }
         
         [HttpPost, Route("upload")]
-        public async Task<IActionResult> UploadFile([FromForm]PlayerImageItem cricketer)
+        public async Task<IActionResult> UploadFile([FromForm] PlayerImageItem cricketer)
         {
             if (!MultipartRequestHelper.IsMultipartContentType(Request.ContentType))
             {
