@@ -189,7 +189,6 @@ namespace cricketapi.Controllers
                 return BadRequest($"An error has occured. Details: {ex.Message}");
             }
 
-
         }
 
         private async Task<CloudBlockBlob> UploadToBlob(string filename, byte[] imageBuffer = null, Stream stream = null)
