@@ -232,7 +232,6 @@ namespace cricketapi.Controllers
             {
                 return new CloudBlockBlob(new Uri(string.Empty));
             }
-
         }
 
         private string GetFileExtention(string fileName)
