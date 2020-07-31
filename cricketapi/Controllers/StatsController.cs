@@ -126,7 +126,7 @@ namespace cricketapi.Controllers
         public async Task<List<Player>> GetName([FromRoute] string name)
         {
             var players = (from m in _context.Player
-                           where m.Name.ToLower().StartsWith(name.ToLower())
+                           where m.Name != null && m.Name.Equals(name, StringComparison.OrdinalIgnoreCase)
                            select m);
             var returned = await players.ToListAsync();
             return returned;
