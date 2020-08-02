@@ -121,8 +121,7 @@ namespace cricketapi.Controllers
             return _context.Player.Any(e => e.Id == id);
         }
 
-        [Route("name/{name}")]
-        [HttpGet]
+        [HttpGet("name/{name}")]
         public async Task<List<Player>> GetName([FromRoute] string name)
         {
             var players = (from m in _context.Player
