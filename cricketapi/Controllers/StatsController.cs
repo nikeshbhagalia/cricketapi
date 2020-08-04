@@ -116,11 +116,6 @@ namespace cricketapi.Controllers
             return Ok(player);
         }
 
-        private bool PlayerExists(int id)
-        {
-            return _context.Player.Any(e => e.Id == id);
-        }
-
         [HttpGet("name/{name}")]
         public async Task<List<Player>> GetName([FromRoute] string name)
         {
@@ -188,6 +183,11 @@ namespace cricketapi.Controllers
                 return BadRequest($"An error has occured. Details: {ex.Message}");
             }
 
+        }
+
+        private bool PlayerExists(int id)
+        {
+            return _context.Player.Any(e => e.Id == id);
         }
 
         private async Task<CloudBlockBlob> UploadToBlob(string filename, byte[] imageBuffer = null, Stream stream = null)
