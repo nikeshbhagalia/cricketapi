@@ -126,7 +126,7 @@ namespace cricketapi.Controllers
             return returned;
         }
         
-        [HttpPost, Route("upload")]
+        [HttpPost("upload")]
         public async Task<IActionResult> UploadFile([FromForm] PlayerImageItem cricketer)
         {
             if (!MultipartRequestHelper.IsMultipartContentType(Request.ContentType))
