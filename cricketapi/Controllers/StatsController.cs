@@ -133,6 +133,7 @@ namespace cricketapi.Controllers
             {
                 return BadRequest($"Expected a multipart request, but got {Request.ContentType}");
             }
+            
             try
             {
                 using (var stream = cricketer.Image.OpenReadStream())
