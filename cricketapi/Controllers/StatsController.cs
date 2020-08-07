@@ -202,7 +202,6 @@ namespace cricketapi.Controllers
 
             var storageConnectionString = _configuration["AzureBlob:connectionString"];
 
-            // Check whether the connection string can be parsed.
             if (CloudStorageAccount.TryParse(storageConnectionString, out storageAccount))
             {
                 try
