@@ -11,8 +11,7 @@ namespace cricketapi.Models
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using (var context = new cricketapiContext(
-                serviceProvider.GetRequiredService<DbContextOptions<cricketapiContext>>()))
+            using (var context = new cricketapiContext(serviceProvider.GetRequiredService<DbContextOptions<cricketapiContext>>()))
             {
                 // Look for any movies.
                 if (context.Player.Count() > 0)
