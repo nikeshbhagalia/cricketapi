@@ -13,7 +13,6 @@ namespace cricketapi.Models
         {
             using (var context = new cricketapiContext(serviceProvider.GetRequiredService<DbContextOptions<cricketapiContext>>()))
             {
-                // Look for any movies.
                 if (context.Player.Count() > 0)
                 {
                     return;   // DB has been seeded
