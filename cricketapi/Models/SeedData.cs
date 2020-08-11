@@ -13,7 +13,7 @@ namespace cricketapi.Models
         {
             using (var context = new cricketapiContext(serviceProvider.GetRequiredService<DbContextOptions<cricketapiContext>>()))
             {
-                if (context.Player.Count() > 0)
+                if (context.Player.Any())
                 {
                     return;   // DB has been seeded
                 }
