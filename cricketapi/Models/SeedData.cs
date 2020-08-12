@@ -15,7 +15,7 @@ namespace cricketapi.Models
             {
                 if (context.Player.Any())
                 {
-                    return;   // DB has been seeded
+                    return;
                 }
 
                 context.Player.AddRange(
