@@ -28,7 +28,6 @@ namespace cricketapi.Models
                         Catches = "200",
                         Url = "https://i.pinimg.com/originals/38/50/7e/38507edd2df178149cbf1cb444ea198c.jpg"
                     }
-
                 );
                 context.SaveChanges();
             }
