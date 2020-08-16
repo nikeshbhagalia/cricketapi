@@ -13,24 +13,22 @@ namespace cricketapi.Models
         {
             using (var context = new cricketapiContext(serviceProvider.GetRequiredService<DbContextOptions<cricketapiContext>>()))
             {
-                if (context.Player.Any())
+                if (!context.Player.Any())
                 {
-                    return;
-                }
+                    context.Player.AddRange(
+                        new Player
+                        {
+                            Name = "Brendon McCullum",
+                            Country = "New Zealand",
+                            Runs = "6000",
+                            Wickets = "0",
+                            Catches = "200",
+                            Url = "https://i.pinimg.com/originals/38/50/7e/38507edd2df178149cbf1cb444ea198c.jpg"
+                        }
+                    );
 
-                context.Player.AddRange(
-                    new Player
-                    {
-                        Name = "Brendon McCullum",
-                        Country = "New Zealand",
-                        Runs = "6000",
-                        Wickets = "0",
-                        Catches = "200",
-                        Url = "https://i.pinimg.com/originals/38/50/7e/38507edd2df178149cbf1cb444ea198c.jpg"
-                    }
-                );
-                
-                context.SaveChanges();
+                    context.SaveChanges();
+                }
             }
         }
     }
