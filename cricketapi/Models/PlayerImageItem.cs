@@ -9,6 +9,7 @@ namespace cricketapi.Models
     public class PlayerImageItem
     {
         public string Name { get; set; }
+        
         public string Country { get; set; }
         public string Runs { get; set; }
         public string Wickets { get; set; }
