@@ -13,6 +13,7 @@ namespace cricketapi.Models
         public string Country { get; set; }
         
         public string Runs { get; set; }
+        
         public string Wickets { get; set; }
         public string Catches { get; set; }
         public IFormFile Image { get; set; }
