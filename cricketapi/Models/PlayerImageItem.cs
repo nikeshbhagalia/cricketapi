@@ -17,6 +17,7 @@ namespace cricketapi.Models
         public string Wickets { get; set; }
         
         public string Catches { get; set; }
+        
         public IFormFile Image { get; set; }
     }
 }
