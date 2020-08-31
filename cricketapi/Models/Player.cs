@@ -1,4 +1,3 @@
-
 namespace cricketapi.Models
 {
     public class Player
