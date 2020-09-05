@@ -32,7 +32,6 @@ namespace cricketapi
             services.AddDbContext<cricketapiContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("cricketapiContext")));
 
-            // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "CricketApi", Version = "v1" });
