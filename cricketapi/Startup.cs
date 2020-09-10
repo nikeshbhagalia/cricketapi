@@ -50,7 +50,7 @@ namespace cricketapi
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-                c.RoutePrefix = string.Empty; // launch swagger from root
+                c.RoutePrefix = string.Empty;
             });
         }
     }
