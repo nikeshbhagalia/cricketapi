@@ -22,11 +22,9 @@ namespace cricketapi.Helpers
             return boundary.ToString();
         }
 
-        public static bool IsMultipartContentType(string contentType)
-        {
-            return !string.IsNullOrEmpty(contentType)
+        public static bool IsMultipartContentType(string contentType) => 
+            !string.IsNullOrEmpty(contentType)
                    && contentType.Contains("multipart/", StringComparison.OrdinalIgnoreCase);
-        }
 
         public static bool HasFormDataContentDisposition(ContentDispositionHeaderValue contentDisposition)
         {
