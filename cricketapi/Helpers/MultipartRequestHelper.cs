@@ -25,13 +25,11 @@ namespace cricketapi.Helpers
         public static bool IsMultipartContentType(string contentType) => 
             !string.IsNullOrEmpty(contentType) && contentType.Contains("multipart/", StringComparison.OrdinalIgnoreCase);
 
-        public static bool HasFormDataContentDisposition(ContentDispositionHeaderValue contentDisposition)
-        {
-            return contentDisposition != null
+        public static bool HasFormDataContentDisposition(ContentDispositionHeaderValue contentDisposition) =>
+            contentDisposition != null
                    && contentDisposition.DispositionType.Equals("form-data")
                    && string.IsNullOrEmpty(contentDisposition.FileName.ToString())
                    && string.IsNullOrEmpty(contentDisposition.FileNameStar.ToString());
-        }
 
         public static bool HasFileContentDisposition(ContentDispositionHeaderValue contentDisposition)
         {
