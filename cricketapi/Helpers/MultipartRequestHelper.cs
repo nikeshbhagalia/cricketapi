@@ -31,12 +31,10 @@ namespace cricketapi.Helpers
                    && string.IsNullOrEmpty(contentDisposition.FileName.ToString())
                    && string.IsNullOrEmpty(contentDisposition.FileNameStar.ToString());
 
-        public static bool HasFileContentDisposition(ContentDispositionHeaderValue contentDisposition)
-        {
-            return contentDisposition != null
+        public static bool HasFileContentDisposition(ContentDispositionHeaderValue contentDisposition) =>
+            contentDisposition != null
                    && contentDisposition.DispositionType.Equals("form-data")
                    && (!string.IsNullOrEmpty(contentDisposition.FileName.ToString())
                        || !string.IsNullOrEmpty(contentDisposition.FileNameStar.ToString()));
-        }
     }
 }
