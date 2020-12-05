@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace cricketapi.Models
 {
-    public class cricketapiContext : DbContext
+    public class CricketApiContext : DbContext
     {
         public cricketapiContext (DbContextOptions<cricketapiContext> options)
             : base(options)
