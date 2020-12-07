@@ -29,7 +29,7 @@ namespace cricketapi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<cricketapiContext>(options => options.UseSqlite(Configuration.GetConnectionString("cricketapiContext")));
+            services.AddDbContext<CricketApiContext>(options => options.UseSqlite(Configuration.GetConnectionString("cricketapiContext")));
 
             services.AddSwaggerGen(c =>
             {
