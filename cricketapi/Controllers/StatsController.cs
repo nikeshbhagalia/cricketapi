@@ -20,7 +20,7 @@ namespace cricketapi.Controllers
     [ApiController]
     public class StatsController : ControllerBase
     {
-        private readonly cricketapiContext _context;
+        private readonly CricketApiContext _context;
         private readonly IConfiguration _configuration;
 
         public StatsController(cricketapiContext context, IConfiguration configuration)
