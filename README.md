@@ -1,2 +1,2 @@
 # Cricket Api
-Api for cricket player statistics
+Api for cricket player statistics.
